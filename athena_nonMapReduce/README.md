@@ -62,10 +62,10 @@ WITH rating_stats AS (
     SELECT
         r.movie_id,
         t.title,
-        ROUND(AVG(r.rating), 2) AS avg_rating,                           ## Average rating (rounded to 2 decimals)
-        COUNT(CASE WHEN r.rating >= 4 THEN 1 END) AS positive_count,     ## Number of positive ratings
-        COUNT(CASE WHEN r.rating <= 2 THEN 1 END) AS negative_count,     ## Number of negative ratings
-        COUNT(*) AS total_ratings                                        ## Total ratings for the movie
+        ROUND(AVG(r.rating), 2) AS avg_rating,                           -- Average rating (rounded to 2 decimals)
+        COUNT(CASE WHEN r.rating >= 4 THEN 1 END) AS positive_count,     -- Number of positive ratings
+        COUNT(CASE WHEN r.rating <= 2 THEN 1 END) AS negative_count,     -- Number of negative ratings
+        COUNT(*) AS total_ratings                                        -- Total ratings for the movie
     FROM customers_rating r
     LEFT JOIN movie_titles t
         ON r.movie_id = t.movie_id
@@ -79,7 +79,7 @@ SELECT
     ROUND(negative_count * 100.0 / total_ratings, 2) AS negative_percentage, -- Negative ratings percentage
     total_ratings
 FROM rating_stats
-WHERE total_ratings >= 100  -- Optional filter: only consider movies with at least 100 ratings
+WHERE total_ratings >= 100  -- Consider movies with at least 100 ratings
 ORDER BY avg_rating DESC;
 ```
 
@@ -91,8 +91,8 @@ WITH rating_stats AS (
         r.movie_id,
         t.title,
         ROUND(AVG(r.rating), 2) AS avg_rating,  ## Average rating
-        ROUND(100.0 * COUNT(CASE WHEN r.rating >= 4 THEN 1 END) / COUNT(*), 2) AS positive_percentage, ## % of ratings >= 4
-        ROUND(100.0 * COUNT(CASE WHEN r.rating <= 2 THEN 1 END) / COUNT(*), 2) AS negative_percentage, ## % of ratings <= 2
+        ROUND(100.0 * COUNT(CASE WHEN r.rating >= 4 THEN 1 END) / COUNT(*), 2) AS positive_percentage, -- % of ratings >= 4
+        ROUND(100.0 * COUNT(CASE WHEN r.rating <= 2 THEN 1 END) / COUNT(*), 2) AS negative_percentage, -- % of ratings <= 2
         COUNT(*) AS total_ratings
     FROM customers_rating r
     JOIN movie_titles t
@@ -156,4 +156,5 @@ SELECT * FROM low_avg
 UNION ALL
 SELECT * FROM high_negative;
 ```
+
 
