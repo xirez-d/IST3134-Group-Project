@@ -10,16 +10,13 @@ reducer.py sums per-movie stats across mappers and outputs:
 ```
 movie_id,avg_rating,positive_count,negative_count,neutral_count,total_count
 ```
-Prerequisites
+# Prerequisites
 EC2 Linux instance with Hadoop installed (single-node/pseudo-distributed is fine)
-
 Java 11, Python 3, AWS CLI
-
 S3 bucket: project-bigdata-1 (region: us-east-1)
-
 IAM role/credentials that can read/write this bucket
 
-Setup & Run
+# Setup & Run
 Run these in order. Lines starting with # are just comments.
 
 ```bash
