@@ -23,12 +23,13 @@ IAM role/credentials that can read/write this bucket
 Setup & Run
 Run these in order. Lines starting with # are just comments.
 
-bash
+```bash
 Copy
 Edit
 # Setup
 sudo apt update -y
 sudo apt install -y openjdk-11-jdk python3 python3-pip awscli
+```
 
 # Start Hadoop (single node)
 sudo su - hadoop
