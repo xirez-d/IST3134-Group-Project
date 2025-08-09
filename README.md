@@ -3,7 +3,7 @@
 Hadoop Streaming with Python on EC2
 Process customer ratings using Hadoop Streaming with Python mappers/reducers. Inputs/outputs live in Amazon S3; Hadoop runs on a single EC2 node.
 
-What this job does?
+# What this job does?
 mapper.py reads each CSV row, classifies ratings (4–5 positive, 1–2 negative, 3 neutral), and aggregates per movie_id.
 
 reducer.py sums per-movie stats across mappers and outputs:
