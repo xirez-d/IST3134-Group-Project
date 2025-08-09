@@ -20,23 +20,6 @@ IAM role/credentials that can read/write this bucket
 Dataset is too large to be uploaded, hence a link is given
 https://www.kaggle.com/datasets/mohamedmalkyasser/netflixmoviescustomers-rating?select=customers_rating.csv
 
-# File Structure in S3
-```
-s3://project-bigdata-1/
-├─ input/
-│  ├─ customer_ratings/
-│  │  └─ customers_rating.csv
-│  └─ titles/ 
-│     └─ movies_titles.csv
-├─ mapreduce/
-│  ├─ mapper.py
-│  └─ reducer.py
-└─ output/
-   └─ netflix_results/
-      ├─ _SUCCESS
-      └─ part-00000
-```
-
 # Setup & Run
 Run these in order. Lines starting with # are just comments.
 
@@ -101,3 +84,4 @@ hdfs dfs -cat /user/hadoop/output/netflix_results/part-* | head -n 20
 
 # Output Analysis
 Analysis is done on another python file; hence, please make sure that all of the files compiled into a single file when running. The analysis can be ran by opening the python_analysis.py file and running it.
+
