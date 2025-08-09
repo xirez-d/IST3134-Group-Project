@@ -7,9 +7,9 @@ Process customer ratings using Hadoop Streaming with Python mappers/reducers. In
 mapper.py reads each CSV row, classifies ratings (4–5 positive, 1–2 negative, 3 neutral), and aggregates per movie_id.
 
 reducer.py sums per-movie stats across mappers and outputs:
-
-
+```
 movie_id,avg_rating,positive_count,negative_count,neutral_count,total_count
+```
 Prerequisites
 EC2 Linux instance with Hadoop installed (single-node/pseudo-distributed is fine)
 
