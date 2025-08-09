@@ -38,12 +38,11 @@ View the first 10 rows of each table to verify correct loading
 ```
 SELECT * FROM customers_rating LIMIT 10;
 SELECT * FROM movie_titles LIMIT 10;
+```
 
--- ============================================================
--- STEP 3: BASIC JOIN TEST
--- ============================================================
-
--- Join customer ratings with movie titles to check if matching works
+# Step 3: Basic Join Test
+Joins customer ratings with movie titles to check if matching works
+```
 SELECT 
     r.movie_id,
     t.title,
@@ -54,7 +53,7 @@ LEFT JOIN movie_titles t
 LIMIT 10;
 ```
 
-Step 4: Metrics Calculation
+# Step 4: Metrics Calculation
 This section computes per-movie statistics: average rating, positive %, negative % and total ratings.
 -> Positive rating: rating >= 4
 -> Negative rating: rating <= 2
@@ -85,7 +84,6 @@ ORDER BY avg_rating DESC;
 ```
 
 # Step 5: Leaderboard Analysis
-
 # Calculation of the ratings
 ```
 WITH rating_stats AS (
@@ -158,3 +156,4 @@ SELECT * FROM low_avg
 UNION ALL
 SELECT * FROM high_negative;
 ```
+
